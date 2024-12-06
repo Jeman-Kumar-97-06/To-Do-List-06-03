@@ -15,7 +15,7 @@ const NewToDoList = ({fL}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const new_list = {title};
-        const resp     = await fetch('/api/todolists',{method:"POST",body:JSON.stringify(new_list),headers:{"Content-Type":"application/json",'Authorization':`Bearer ${user.token}`}});
+        const resp     = await fetch('https://to-do-list-backend-o9x9.onrender.com/api/todolists',{method:"POST",body:JSON.stringify(new_list),headers:{"Content-Type":"application/json",'Authorization':`Bearer ${user.token}`}});
         const json     = await resp.json();
         if(!resp.ok){
             setError(json.error);

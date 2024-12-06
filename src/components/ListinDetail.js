@@ -17,7 +17,7 @@ const ListinDetail = ({list}) => {
 
     //DELETES A WHOLE LIST WHEN CLICKED ON DELETE BUTTON
     const handleDel = async () => {
-        const resp = await fetch('/api/todolists/'+list._id,{method:'DELETE',headers:{'Authorization':`Bearer ${user.token}`}});
+        const resp = await fetch('https://to-do-list-backend-o9x9.onrender.com/api/todolists/'+list._id,{method:'DELETE',headers:{'Authorization':`Bearer ${user.token}`}});
         const json = await resp.json();
         if(resp.ok){
             dispatch({type:"DELETE_LIST",payload:json})
@@ -28,7 +28,7 @@ const ListinDetail = ({list}) => {
     useEffect(()=>{
         const getupdatedList = async () => {
             const updatedList = {list:listoftasks,dellis:listofdeltasks};
-            const resp        = await fetch('/api/todolists/'+list._id,
+            const resp        = await fetch('https://to-do-list-backend-o9x9.onrender.com/api/todolists/'+list._id,
                                             {
                                              method:'PATCH',body:JSON.stringify(updatedList),
                                              headers:{

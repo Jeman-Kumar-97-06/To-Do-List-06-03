@@ -9,7 +9,7 @@ const Home = () => {
 
     useEffect(()=>{
         const fetchLists = async () => {
-            const resp = await fetch('/api/todolists',{headers:{'Authorization':`Bearer ${user.token}`}});
+            const resp = await fetch('https://to-do-list-backend-o9x9.onrender.com/api/todolists',{headers:{'Authorization':`Bearer ${user.token}`}});
             const json = await resp.json();
             if(resp.ok){
                 dispatch({type:"SET_LISTS",payload:json});
