@@ -227,6 +227,18 @@ body{
 }
 
 @media only screen and (max-width:393px) {
+  .add_task_btn{
+    margin-top:5px;
+    margin-left:0;
+  }
+  .new_todo_list{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home_page{
+    margin-left: 0;
+  }
   .toggle-button{
     display: flex;
   }
@@ -252,14 +264,17 @@ body{
     display: flex;
   }
   .input-submit{
-    width:95%;
+    width:100%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
   }
   .input-submit input{
-    width:200px;
+    width:90%;
   }
-  .new_todo_list h4{
-    margin-left:10px;
+  .list_in_det{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
